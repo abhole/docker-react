@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t abhole/docker-react -f Dockerfile.dev .
+script:
+  - docker run abhole/docker-react npm run test -- --coverage
